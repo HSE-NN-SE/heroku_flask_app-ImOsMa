@@ -45,7 +45,7 @@ jobs:
         with:
           heroku_api_key: ${{secrets.HEROKU_API}}
           heroku_app_name: "calcislam" #Must be unique in Heroku
-          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          heroku_email: ${{secrets.HEROKU_EMAIL }}
           
   TelegramNotifications:
     runs-on: ubuntu-latest
