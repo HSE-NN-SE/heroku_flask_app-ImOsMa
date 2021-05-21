@@ -47,7 +47,7 @@ jobs:
       - name: PWD
         run: pwd
       - name: Registration
-        run: sudo docker login --username=$DOCKER_USER --password=$DOCKER_PASS
+        run: sudo docker login --username=${{ DOCKER_USER}} --password=${{ DOCKER_PASS}}
       - name: Docker build
         run: sudo docker build . --tag test
       - name: Change tag
