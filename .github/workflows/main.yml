@@ -44,11 +44,14 @@ jobs:
     needs: Tests
     steps:
       - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API}}
-          heroku_app_name: "calcislam" #Must be unique in Heroku
-          heroku_email: ${{secrets.HEROKU_EMAIL }}
+      - name: PWD
+        run: pwd
+      - name: Registration
+        run: sudo docker login —username=$DOCKER_USER —password=$DOCKER_PASS
+      - name: Docker build
+        run: sudo docker build . --tag test
+      - name: Change tag
+        run: sudo docker image tag my_docker islamosmanov/test
           
   TelegramNotifications:
     runs-on: self-hosted
