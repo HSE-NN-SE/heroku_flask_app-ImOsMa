@@ -54,7 +54,7 @@ jobs:
       - name: Docker build
         run: sudo docker build . --tag test
       - name: Change tag
-        run: sudo docker image tag my_docker islamosmanov/test
+        run: sudo docker image tag test islamosmanov/test
       - name: Push
         run: sudo docker push islamosmanov/test
           
